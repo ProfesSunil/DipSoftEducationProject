@@ -1,0 +1,14 @@
+<component-definitions>
+<definition name="educationportal.common" path="/layout/layout.jsp">
+ <put name="title" type="string" value="TS Grewal Education System"/>
+ <put name="header1" value="/layout/header.jsp"/>
+ <put name="footer1" value="/layout/footer.jsp"/>
+</definition>
+<definition name="education.login" extends="educationportal.common">
+ <put name="body1" value="/pages/Welcome.jsp"/>
+</definition>
+<definition name="education.success" extends="educationportal.common">
+ <put name="body1" value="/pages/user/loginsuccess.jsp"/>
+</definition>
+
+</component-definitions>
