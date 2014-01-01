@@ -17,7 +17,7 @@
 		</data-source> </data-sources> -->
 	<!-- =================================Form bean Definitions ========= -->
 	<form-beans>
-		
+		<form-bean name="loginForm" type="com.dipst.application.sturts.form.LoginForm"></form-bean>
 	</form-beans>
 
 	<!-- ======================Global Forward Definitions -->
@@ -30,7 +30,11 @@
 	<action-mappings>
 		<!-- Default welcome Action -->
 		<!-- forwards to welcome.jsp -->
-
+		<action path="/loginAction" name="loginForm" attribute ="loginForm" input ="views/login.jsp"
+		scope="request" type="com.dipst.application.sturts.action.LoginAction" >
+		<forward name="success" path="/views/welcome.jsp"></forward>
+		<forward name="failure" path="/error/error.jsp"/>
+		</action>
 				
 	</action-mappings>
 
@@ -39,7 +43,7 @@
 	<controller processorClass="org.apache.struts.tiles.TilesRequestProcessor" />
 
 	<!-- =============================Message Resource Definitions -->
-	<message-resources parameter="MessageResources"></message-resources>
+	<message-resources parameter="com/dipst/application/sturts/MessageResources"></message-resources>
 
 	<!-- ======================================================= Tiles plugin -->
 	<!-- This plugin initialize Tiles definition factory. This later can takes 
